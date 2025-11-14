@@ -8,11 +8,18 @@ export default {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       fontFamily: {
         body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
-        code: ['monospace'],
+        headline: ['Space Grotesk', 'sans-serif'],
+        code: ['Source Code Pro', 'monospace'],
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -88,11 +95,20 @@ export default {
             height: '0',
           },
         },
+        'soft-pulse': {
+          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+          '50%': { opacity: '0.8', transform: 'scale(1.02)' },
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'soft-pulse': 'soft-pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
+      boxShadow: {
+        'glow-accent': '0 0 15px hsl(var(--accent) / 0.5), 0 0 5px hsl(var(--accent) / 0.7)',
+        'glow-accent-sm': '0 0 8px hsl(var(--accent) / 0.4), 0 0 3px hsl(var(--accent) / 0.6)',
+      }
     },
   },
   plugins: [require('tailwindcss-animate')],
