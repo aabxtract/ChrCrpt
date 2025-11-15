@@ -4,6 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Header from '@/components/layout/header';
 import CreateCapsuleForm from '@/components/create-capsule-form';
 import MyCapsulesList from '@/components/my-capsules-list';
+import TransactionHistory from '@/components/transaction-history';
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
             <MyCapsulesList />
           </TabsContent>
         </Tabs>
+        <TransactionHistory />
       </main>
     </div>
   );
