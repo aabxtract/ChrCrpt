@@ -66,23 +66,23 @@ export default function CapsuleCard({ capsule, type }: CapsuleCardProps) {
   const iconColor = isUnlocked ? 'text-accent' : 'text-muted-foreground';
 
   return (
-    <Card className="flex flex-col justify-between bg-background/50 border-primary/30 hover:border-accent/50 transition-colors duration-300">
+    <Card className="flex flex-col justify-between bg-card/60 border-border backdrop-blur-sm hover:border-accent transition-colors duration-300 shadow-lg hover:shadow-glow-accent-sm">
       <CardHeader className="flex-row items-start justify-between">
         <div className="space-y-1">
-          <CardTitle className="font-headline text-lg">Capsule #{capsule.tokenId.toString()}</CardTitle>
+          <CardTitle className="font-headline text-lg bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Capsule #{capsule.tokenId.toString()}</CardTitle>
           <AddressDisplay address={capsule.sender} label="From" />
           <AddressDisplay address={capsule.recipient} label="To" />
         </div>
-        <Icon className={`h-8 w-8 ${iconColor}`} />
+        <Icon className={`h-8 w-8 ${iconColor} transition-colors`} />
       </CardHeader>
       <CardContent className="flex-grow">
         {decryptedMessage ? (
-          <div className="p-4 rounded-md bg-primary/10 border border-primary/20 font-code text-sm text-foreground/80 break-words whitespace-pre-wrap">
+          <div className="p-4 rounded-md bg-background/50 border border-border font-code text-sm text-foreground/80 break-words whitespace-pre-wrap">
             {decryptedMessage}
           </div>
         ) : isUnlocked ? (
-          <div className="text-center text-accent">
-            <p className="font-semibold">Capsule Unlocked!</p>
+          <div className="text-center text-accent flex flex-col items-center justify-center h-full">
+            <p className="font-semibold text-lg animate-glow-pulse">Capsule Unlocked!</p>
             <p className="text-sm">The message is now available to be revealed.</p>
           </div>
         ) : (
@@ -91,7 +91,7 @@ export default function CapsuleCard({ capsule, type }: CapsuleCardProps) {
       </CardContent>
       <CardFooter>
         {isUnlocked && !decryptedMessage && type === 'received' && (
-          <Button onClick={handleDecrypt} disabled={isDecrypting} className="w-full shadow-glow-accent hover:shadow-glow-accent-sm transition-shadow">
+          <Button onClick={handleDecrypt} disabled={isDecrypting} className="w-full bg-accent hover:bg-accent/90 text-accent-foreground shadow-glow-accent hover:shadow-glow-accent-sm transition-all duration-300">
             {isDecrypting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
             Reveal Message
           </Button>

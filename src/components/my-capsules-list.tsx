@@ -10,7 +10,7 @@ function CapsuleListSkeleton() {
   return (
     <div className="grid gap-4 md:grid-cols-2">
       {[...Array(2)].map((_, i) => (
-        <Skeleton key={i} className="h-48 rounded-lg" />
+        <Skeleton key={i} className="h-60 rounded-lg bg-card/80" />
       ))}
     </div>
   );
@@ -18,7 +18,7 @@ function CapsuleListSkeleton() {
 
 function EmptyState({ message }: { message: string }) {
   return (
-    <div className="flex flex-col items-center justify-center text-center p-8 rounded-lg bg-primary/10 border-2 border-dashed border-primary/20">
+    <div className="flex flex-col items-center justify-center text-center p-8 rounded-lg bg-card/30 border-2 border-dashed border-border">
       <p className="text-muted-foreground">{message}</p>
     </div>
   )
@@ -30,7 +30,7 @@ export default function MyCapsulesList() {
 
   if (!isConnected) {
     return (
-       <Card className="border-accent/30 shadow-glow-accent-sm bg-card/50 backdrop-blur-sm mt-6">
+       <Card className="border-primary/30 shadow-glow-primary-sm bg-card/50 backdrop-blur-sm mt-4">
         <CardHeader>
           <CardTitle className="font-headline text-center">View Your Capsules</CardTitle>
         </CardHeader>
@@ -42,8 +42,8 @@ export default function MyCapsulesList() {
   }
 
   return (
-    <div className="space-y-8 mt-6">
-      <Card className="border-accent/30 shadow-glow-accent-sm bg-card/50 backdrop-blur-sm">
+    <div className="space-y-8 mt-4">
+      <Card className="border-primary/30 shadow-glow-primary-sm bg-card/50 backdrop-blur-sm">
         <CardHeader>
           <CardTitle className="font-headline">Received Capsules</CardTitle>
           <CardDescription>These are the time capsules others have sent to you.</CardDescription>
@@ -62,7 +62,7 @@ export default function MyCapsulesList() {
           )}
         </CardContent>
       </Card>
-      <Card className="border-accent/30 shadow-glow-accent-sm bg-card/50 backdrop-blur-sm">
+      <Card className="border-primary/30 shadow-glow-primary-sm bg-card/50 backdrop-blur-sm">
         <CardHeader>
           <CardTitle className="font-headline">Sent Capsules</CardTitle>
           <CardDescription>These are the time capsules you have sent.</CardDescription>

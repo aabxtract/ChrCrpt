@@ -37,7 +37,7 @@ export default function ConnectWallet() {
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="outline" className="flex items-center gap-2 bg-card/80 backdrop-blur-sm hover:bg-primary/50 shadow-glow-accent-sm">
+          <Button variant="outline" className="flex items-center gap-2 bg-card/80 backdrop-blur-sm hover:bg-accent hover:text-accent-foreground shadow-glow-accent-sm transition-all duration-300 border-accent/50">
              <Avatar className="h-6 w-6">
                 <AvatarImage src={`https://effigy.im/a/${address}.svg`} />
                 <AvatarFallback>{ensName?.[0] || address[2]}</AvatarFallback>
@@ -65,7 +65,7 @@ export default function ConnectWallet() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button className="shadow-glow-accent hover:shadow-glow-accent-sm transition-shadow">
+        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow-primary hover:shadow-glow-primary-sm transition-all duration-300">
           <Wallet className="mr-2 h-4 w-4" />
           Connect Wallet
           {isPending && '...'}

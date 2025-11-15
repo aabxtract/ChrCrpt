@@ -66,7 +66,7 @@ export default function CreateCapsuleForm() {
   }
   
   return (
-    <Card className="border-accent/30 shadow-glow-accent-sm bg-card/50 backdrop-blur-sm">
+    <Card className="border-primary/30 shadow-glow-primary-sm bg-card/50 backdrop-blur-sm mt-4">
       <CardHeader>
         <CardTitle className="font-headline">Create a New Time Capsule</CardTitle>
         <CardDescription>Your message will be encrypted and stored on-chain as an NFT, locked until the date you choose.</CardDescription>
@@ -138,7 +138,7 @@ export default function CreateCapsuleForm() {
               />
             </div>
             
-            <Button type="submit" disabled={isMinting} className="w-full shadow-glow-accent hover:shadow-glow-accent-sm transition-all">
+            <Button type="submit" disabled={isMinting} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow-primary hover:shadow-glow-primary-sm transition-all duration-300">
               {isMinting ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Minting...</> : 'Create & Mint Capsule'}
             </Button>
           </form>

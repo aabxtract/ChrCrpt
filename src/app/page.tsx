@@ -8,15 +8,17 @@ import MyCapsulesList from '@/components/my-capsules-list';
 export default function Home() {
   return (
     <div
-      className="relative min-h-screen w-full"
-      style={{
-        backgroundImage: 'radial-gradient(ellipse at top, hsl(var(--secondary)), hsl(var(--background)))'
-      }}
+      className="relative min-h-screen w-full overflow-hidden"
     >
+      <div className="absolute inset-0 z-0 bg-background" style={{
+        backgroundImage: 'radial-gradient(ellipse at top, hsl(var(--secondary)), hsl(var(--background)))'
+      }} />
+      <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: 'url("/grid.svg")', backgroundSize: '30px 30px' }} />
+
       <Header />
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 relative z-10">
         <Tabs defaultValue="create" className="max-w-4xl mx-auto">
-          <TabsList className="grid w-full grid-cols-2 bg-primary/20">
+          <TabsList className="grid w-full grid-cols-2 bg-card/50 border border-border backdrop-blur-sm">
             <TabsTrigger value="create">Create Capsule</TabsTrigger>
             <TabsTrigger value="view">My Capsules</TabsTrigger>
           </TabsList>

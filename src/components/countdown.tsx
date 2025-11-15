@@ -48,19 +48,19 @@ export default function Countdown({ unlockTime, isRecipient }: CountdownProps) {
   const formatted = formatDuration(timeLeft, {
     format: ['days', 'hours', 'minutes', 'seconds'],
     zero: true,
-    delimiter: ' : ',
+    delimiter: ':',
   })
-  .replace(/\b\d\b/g, '0$&') // Pad with leading zeros
-  .split(' : ');
+  .split(':')
+  .map(v => v.padStart(2, '0'));
 
   const labels = ['Days', 'Hours', 'Minutes', 'Seconds'];
 
   return (
-    <div className="flex justify-around text-center p-4 rounded-lg bg-primary/10 animate-soft-pulse">
+    <div className="grid grid-cols-4 gap-2 text-center p-4 rounded-lg bg-card/50 border border-border animate-soft-pulse">
       {formatted.map((value, index) => (
-        <div key={labels[index]} className="flex flex-col">
-          <span className="font-headline text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-gray-200 to-purple-300">{value}</span>
-          <span className="text-xs text-muted-foreground">{labels[index]}</span>
+        <div key={labels[index]} className="flex flex-col p-2 rounded-md bg-background/50">
+          <span className="font-headline text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-slate-200 to-primary">{value}</span>
+          <span className="text-xs text-muted-foreground uppercase tracking-widest">{labels[index]}</span>
         </div>
       ))}
     </div>
