@@ -1,17 +1,4 @@
 qa
-
-
-
-
-
-
-
-
-
-
-
-
-
 11111111111111111111111111111111111111111111111111111111111111111111111111111111# Firebase Studio
 
 This is a NextJS starter in Firebase Studio.
