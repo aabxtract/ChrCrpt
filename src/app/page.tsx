@@ -19,9 +19,10 @@ export default function Home() {
       <Header />
       <main className="container mx-auto px-4 py-8 relative z-10">
         <Tabs defaultValue="create" className="max-w-4xl mx-auto">
-          <TabsList className="grid w-full grid-cols-2 bg-card/50 border border-border backdrop-blur-sm">
+          <TabsList className="grid w-full grid-cols-3 bg-card/50 border border-border backdrop-blur-sm">
             <TabsTrigger value="create">Create Capsule</TabsTrigger>
             <TabsTrigger value="view">My Capsules</TabsTrigger>
+            <TabsTrigger value="history">History</TabsTrigger>
           </TabsList>
           <TabsContent value="create">
             <CreateCapsuleForm />
@@ -29,8 +30,10 @@ export default function Home() {
           <TabsContent value="view">
             <MyCapsulesList />
           </TabsContent>
+          <TabsContent value="history">
+            <TransactionHistory />
+          </TabsContent>
         </Tabs>
-        <TransactionHistory />
       </main>
     </div>
   );
